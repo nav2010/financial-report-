@@ -95,27 +95,25 @@ var totalMonths = finances.length;  //
        
 let result = finances.reduce((a, b, i) => {
     let d = (i > 1) ? a : {total: a[1], average: a[1], sumChange: 0, lastMonth: a[1],
-         increase: a, decrease: a},
-        change = b[1] - d.lastMonth
+        increase: a, decrease: a},
+        change = b[1] - d.lastMonth 
         d.total += b[1]
-    total =d.total
-   d.sumChange += change
-   d.lastMonth = b[1]
-    d.average = d.sumChange / i
-numb=d.average
-d.increase = (d.increase[1] > change) ? d.increase : [b[0], change]
-    d.decrease = (d.decrease[1] < change) ? d.decrease : [b[0], change]
-    return d
+        total =d.total
+         d.sumChange += change
+         d.lastMonth = b[1]
+          d.average = d.sumChange / i
+          numb=d.average
+          d.increase = (d.increase[1] > change) ? d.increase : [b[0], change]
+          inc=d.increase
+           d.decrease = (d.decrease[1] < change) ? d.decrease : [b[0], change]
+    dec=d.decrease
+           return d
 })
-
 console.log(result) // Return the full object
-console.log(result.total) // Only return one value, the total
-
+//console.log(result.total) // Only return one value, the total
 
 console.log('Financial Analysis');
 console.log('--------------------------------');
 console.log('Total Months:' ,totalMonths );
-console.log('Total ' ,total);
-console.log('averange change', numb )
-console.log(result,'Current month - previous month') // Return the full object
-console.log(result.total,'Current month - previous month') // Only return one value, the total
+console.log('Total :' ,total);
+console.log('averange change :', numb )
