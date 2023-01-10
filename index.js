@@ -90,3 +90,10 @@ var finances = [
 // create var of totalmonths 
 // we can calculate using length 
 var totalMonths = finances.length;  // 
+
+//Calculate the total revenue over the entire period;
+       
+let result = finances.reduce((a, b, i) => {
+    let d = (i > 1) ? a : {total: a[1], average: a[1], sumChange: 0, lastMonth: a[1],
+         increase: a, decrease: a},
+        change = b[1] - d.lastMonth
